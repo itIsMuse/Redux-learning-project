@@ -1,23 +1,26 @@
-// productReducers.js
+
 
 // Initial state
 const initialState = {
-    products: [],
-    selectedProduct: null
+    products: [{
+        id : 1,
+        title: "Product 1",
+        category: "Category 1"
+    }],
 };
 
 // Reducer function
-const productReducer = (state = initialState, action) => {
-    switch (action.type) {
+const productReducer = (state = initialState, {type, payload}) => {
+    switch (type) {
         case 'ADD_PRODUCT':
             return {
                 ...state,
-                products: [...state.products, action.payload]
+                products: [...state.products, payload]
             };
         case 'SELECT_PRODUCT':
             return {
                 ...state,
-                selectedProduct: action.payload
+                selectedProduct: payload
             };
         default:
             return state;

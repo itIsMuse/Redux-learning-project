@@ -1,3 +1,6 @@
 // Action types for adding and selecting
-export const ADD_ITEM = 'ADD_ITEM';
-export const SELECT_ITEM = 'SELECT_ITEM';
+export const ActionTypes = {
+    ADD_PRODUCT: 'ADD_PRODUCT',
+    SELECT_PRODUCT: 'SELECT_PRODUCT',
+    REMOVE_SELECTED_PRODUCT: 'REMOVE_SELECTED_PRODUCT'
+}
