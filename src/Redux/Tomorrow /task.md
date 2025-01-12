@@ -1,2 +1,1 @@
-* continue with code ensuring that deprecated code are not used i am not using switch for my routing 
-* continue building 
+* Make Sure tailwind works i need to learn that process 
