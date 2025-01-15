@@ -9,9 +9,12 @@ import Product from './Containers/Product'
 function App() {
   return (
     <div className='App'>
+      <Header />
    <Routes>
-      <Route path="/" element={<Header />} />
+      <Route path="/" element={<Navigate to = '/ProductListings' />} /> 
+      <Route path="/ProductListings" element={<ProductListings />} /> 
       <Route path="/:productID" element={<ProductDetails />} /> 
+      <Route> 404 Not Found ! </Route>
     </Routes>
     </div>
   )

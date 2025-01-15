@@ -18,10 +18,7 @@ const Header = () => {
       </nav>
     </div>
   </div>
-  {/* content */}
-  <div className = "mt-20">
-    <h1 className = "text-center text-3xl font-bold">Welcome to the Page</h1>
-  </div>
+
   </div>
   )
 }
