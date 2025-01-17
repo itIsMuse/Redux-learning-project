@@ -12,7 +12,7 @@ const initialState = {
 // Reducer function
 const productReducer = (state = initialState, {type, payload}) => {
     switch (type) {
-        case 'ADD_PRODUCT':
+        case 'SET_PRODUCTS':
             return {
                 ...state,
                 products: [...state.products, payload]
