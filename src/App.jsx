@@ -13,7 +13,7 @@ function App() {
    <Routes>
       <Route path="/" element={<Navigate to = '/ProductListings' />} /> 
       <Route path="/ProductListings" element={<ProductListings />} /> 
-      <Route path="/:productID" element={<ProductDetails />} /> 
+      <Route path="/Product" element={<Product />} /> 
       <Route path='*'> 404 Not Found ! </Route>
     </Routes>
     </div>

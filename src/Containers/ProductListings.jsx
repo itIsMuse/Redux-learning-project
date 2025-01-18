@@ -6,7 +6,7 @@ import {setProducts} from '../Redux/Actions/productAction.js'
 
 const ProductListings = () => {
 
-  const products = useSelector(state => state)
+
   const dispatch = useDispatch()
   
 
@@ -24,7 +24,7 @@ const ProductListings = () => {
   }, []);
 
   return (
-    <div className='mt-20 container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+    <div>
      <Product />
     </div>
   )
