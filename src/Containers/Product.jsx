@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux'
 
 const Product = () => {
   const products = useSelector((state) => state.allProducts.products)
-  const renderList = products[1].map((product) => {
+  const updatedProduct = products
+  const renderList = updatedProduct[1].map((product) => {
     const { id, title, image, price, category } = product;
     return (
       <div key = {id} className='col-4 bg-gray-200 p-4'>
