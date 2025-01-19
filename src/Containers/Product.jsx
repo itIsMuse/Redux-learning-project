@@ -2,12 +2,11 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 const Product = () => {
-  const products = useSelector((state) => state.allProducts.products[1])
-  console.log(products[1])
-  const renderList = products.map((product) => {
+  const products = useSelector((state) => state.allProducts.products)
+  const renderList = products[1].map((product) => {
     const { id, title, image, price, category } = product;
     return (
-      <div className='col-4 bg-gray-200 p-4' key={id}>
+      <div key = {id} className='col-4 bg-gray-200 p-4'>
         <a
           href="#"
           className="block bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
@@ -25,7 +24,7 @@ const Product = () => {
         </a>
       </div>
     );
-  });
+  })
   
   return (
     <div className = 'mt-20 container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>

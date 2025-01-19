@@ -7,7 +7,7 @@ const Header = () => {
     <div className = "container mx-auto flex justify-between items-center px-4 py-3">
       {/*  Logo  */}
       <div className = "text-xl font-bold">
-        <a href="#">Logo</a>
+        <a href="#">My store</a>
       </div>
       {/*  Nav  */}
       <nav className = "flex space-x-4">

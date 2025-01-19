@@ -10,7 +10,7 @@ const ProductListings = () => {
   const dispatch = useDispatch()
   
 
-  const fetchProducts = async () => {
+  const fetchProducts =  async() => {
     try {
       const response = await axios.get('https://fakestoreapi.com/products');
       dispatch(setProducts(response.data));
@@ -21,6 +21,7 @@ const ProductListings = () => {
 
   useEffect(() => {
     fetchProducts();
+
   }, []);
 
   return (

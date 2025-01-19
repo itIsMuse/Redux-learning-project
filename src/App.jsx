@@ -11,9 +11,9 @@ function App() {
     <div className='App'>
       <Header />
    <Routes>
-      <Route path="/" element={<Navigate to = '/ProductListings' />} /> 
-      <Route path="/ProductListings" element={<ProductListings />} /> 
-      <Route path="/Product" element={<Product />} /> 
+      <Route path="/" element={<Navigate to = '/productListings' />} /> 
+      <Route path="/productListings" element={<ProductListings />} /> 
+      <Route path="/product" element={<Product />} /> 
       <Route path='*'> 404 Not Found ! </Route>
     </Routes>
     </div>
