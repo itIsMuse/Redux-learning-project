@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Product = () => {
   const products = useSelector((state) => state.allProducts.products)
@@ -8,8 +9,7 @@ const Product = () => {
     const { id, title, image, price, category } = product;
     return (
       <div key = {id} className= 'p-4'>
-        <a
-          href="#"
+        <Link to={`/product/${id}`}
           className="block bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <img
@@ -22,7 +22,7 @@ const Product = () => {
             <p className="text-gray-600">#{price}</p>
             <p className="text-gray-600">{category}</p>
           </div>
-        </a>
+        </Link>
       </div>
     );
   })
