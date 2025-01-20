@@ -7,7 +7,7 @@ const Product = () => {
   const renderList = updatedProduct[1].map((product) => {
     const { id, title, image, price, category } = product;
     return (
-      <div key = {id} className='col-4 bg-gray-200 p-4'>
+      <div key = {id} className= 'p-4'>
         <a
           href="#"
           className="block bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
