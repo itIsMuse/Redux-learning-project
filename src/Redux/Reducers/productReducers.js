@@ -2,11 +2,7 @@
 
 // Initial state
 const initialState = {
-    products: [{
-        id : 1,
-        title: "Product 1",
-        category: "Category 1"
-    }],
+    products: [],
 };
 
 // Reducer function

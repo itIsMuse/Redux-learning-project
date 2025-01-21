@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Product = () => {
   const products = useSelector((state) => state.allProducts.products)
   const updatedProduct = products
-  const renderList = updatedProduct[1].map((product) => {
+  const renderList = updatedProduct[0].map((product) => {
     const { id, title, image, price, category } = product;
     return (
       <div key = {id} className= 'p-4'>
