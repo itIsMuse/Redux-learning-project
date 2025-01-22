@@ -3,6 +3,7 @@
 // Initial state
 const initialState = {
     products: [],
+    product: {}
 };
 
 // Reducer function
