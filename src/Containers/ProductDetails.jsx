@@ -9,7 +9,7 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
 
   // Use useSelector to get the product details from Redux state
-  const product = useSelector((state) => state.allproducts.product);
+  const product = useSelector((state) => state.product);
 
   // Fetch product details when component mounts or id changes
   const fetchProductDetail = async () => {

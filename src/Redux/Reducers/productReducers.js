@@ -14,10 +14,10 @@ const productReducer = (state = initialState, {type, payload}) => {
                 ...state,
                 products: [...state.products, payload]
             };
-        case 'SELECT_PRODUCT':
+        case 'SELECTED_PRODUCT':
             return {
                 ...state,
-                selectedProduct: payload
+                product: payload
             };
         default:
             return state;
