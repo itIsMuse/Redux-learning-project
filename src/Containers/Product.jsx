@@ -15,7 +15,7 @@ const Product = () => {
           <img
             src={image}
             alt="Card Image"
-            className="w-full h-48 object-cover rounded-t-lg"
+            className="w-full h-48 object-contain rounded-t-lg"
           />
           <div className="p-4">
             <h2 className="text-lg font-semibold">{title}</h2>
