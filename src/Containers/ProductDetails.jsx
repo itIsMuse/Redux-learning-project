@@ -75,5 +75,5 @@ const ProductDetails = () => {
 
   );
 };
-
+// today i messed up I didnt wake up early enough to code i am just here to mark attendance i have to be better tomorrow and remember my routine and not be carried away with the fasting , the fasting is supposd to help me remeber every action matters 
 export default ProductDetails;

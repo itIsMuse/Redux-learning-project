@@ -19,6 +19,10 @@ const productReducer = (state = initialState, {type, payload}) => {
                 ...state,
                 product: payload
             };
+        case 'REMOVE_SELECTED_PRODUCT':
+            return {
+                ...state,
+            }
         default:
             return state;
     }
