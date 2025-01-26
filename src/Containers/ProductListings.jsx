@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import { useSelector, useDispatch} from 'react-redux'
 import Product from '../Containers/Product'
-import {setProducts} from '../Redux/Actions/productAction.js'
+import {removeSelectedProduct, setProducts} from '../Redux/Actions/productAction.js'
 import  ClipLoader  from 'react-spinners/ClipLoader.js'
 
 const ProductListings = () => {
@@ -15,6 +15,7 @@ const ProductListings = () => {
   const fetchProducts =  async() => {
     try {
       const response = await axios.get('https://fakestoreapi.com/products');
+      dispatch(removeSelectedProduct())
       dispatch(setProducts(response.data));
       setLoading(false); // Set loading to false after the data is fetched
     } catch (error) {
@@ -24,9 +25,10 @@ const ProductListings = () => {
   };
 
   useEffect(() => {
+
     fetchProducts();
 
-  }, []);
+  }, [dispatch]);
 
   if (loading) {
     return (
