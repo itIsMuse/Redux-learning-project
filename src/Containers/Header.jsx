@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -7,12 +8,12 @@ const Header = () => {
     <div className = "container mx-auto flex justify-between items-center px-4 py-3">
       {/*  Logo  */}
       <div className = "text-xl font-bold">
-        <a href="#">My store</a>
+      <Link to={'/'}className = "hover:grow">My store </Link>
       </div>
       {/*  Nav  */}
       <nav className = "flex space-x-4">
-        <a href="#home" className = "hover:underline">Home</a>
-        <a href="#about" className = "hover:underline">About</a>
+       <Link to={'/'}className = "hover:grow">Home </Link>
+       <Link to={'/about'}className = "hover:grow">About </Link>
         <a href="#services" className = "hover:underline">Services</a>
         <a href="#contact" className = "hover:underline">Contact</a>
       </nav>

@@ -10,7 +10,7 @@ const Product = () => {
     return (
       <div key = {id} className= 'p-4'>
         <Link to={`/product/${id}`}
-          className="block bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+          className="block bg-white border border-gray-200 rounded-lg shadow-md hover:grow transition-shadow duration-300"
         >
           <img
             src={image}

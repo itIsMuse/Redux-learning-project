@@ -5,6 +5,7 @@ import Header from './Containers/Header'
 import ProductListings from './Containers/ProductListings'
 import ProductDetails from './Containers/ProductDetails'
 import Product from './Containers/Product'
+import AboutPage from './Components/AboutPage.jsx'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/productListings" element={<ProductListings />} /> 
       <Route path="/product" element={<Product />} /> 
       <Route path="/product/:id" element={<ProductDetails />} />
+      <Route path="/about" element={<AboutPage />} />
       <Route path='*'> 404 Not Found ! </Route>
     </Routes>
     </div>
