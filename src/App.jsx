@@ -6,6 +6,8 @@ import ProductListings from './Containers/ProductListings'
 import ProductDetails from './Containers/ProductDetails'
 import Product from './Containers/Product'
 import AboutPage from './Components/AboutPage.jsx'
+import Services from './Components/Services.jsx'
+import Contact from './Components/Contact.jsx'
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <Route path="/product" element={<Product />} /> 
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path='*'> 404 Not Found ! </Route>
     </Routes>
     </div>

@@ -13,7 +13,7 @@ const AboutPage = () => {
             efficient shopping experience from start to finish.
           </p>
           <h2 className ="text-2xl font-semibold text-gray-800 text-left mb-3">What We Offer</h2>
-          <ul className ="list-disc pl-5 space-y-2 text-gray-600">
+          <ul className ="list-disc pl-5 space-y-3 text-gray-600 text-left">
             <li><span className ="font-semibold">A Seamless Shopping Experience:</span> From browsing to checkout, enjoy a hassle-free journey.</li>
             <li><span className ="font-semibold">Wide Product Range:</span> Discover a curated selection of [product categories, e.g., fashion, electronics, or home goods].</li>
             <li><span className ="font-semibold">Reliability & Speed:</span> Powered by Redux, our store guarantees real-time updates and consistent performance.</li>

@@ -14,8 +14,8 @@ const Header = () => {
       <nav className = "flex space-x-4">
        <Link to={'/'}className = "hover:grow">Home </Link>
        <Link to={'/about'}className = "hover:grow">About </Link>
-        <a href="#services" className = "hover:underline">Services</a>
-        <a href="#contact" className = "hover:underline">Contact</a>
+       <Link to={'/services'}className = "hover:grow">Services </Link>
+       <Link to={'/contact'}className = "hover:grow">Contact  </Link>
       </nav>
     </div>
   </div>
