@@ -8,22 +8,22 @@ const Header = () => {
       {/* Top Bar */}
       <div className="hidden md:flex justify-between items-center px-4 lg:px-16 py-2 text-sm text-gray-700">
         <div className="flex gap-4">
-          <a href="#" className="hover:text-orange-600 flex items-center">
+          <Link to="/" className="hover:text-orange-600 flex items-center">
             <FaUser className="mr-1" /> Login / Sign Up
-          </a>
-          <a href="#" className="hover:text-orange-600 flex items-center">
+          </Link>to
+          <Link to="/" className="hover:text-orange-600 flex items-center">
             <FaQuestionCircle className="mr-1" /> Help
-          </a>
-          <a href="#" className="hover:text-orange-600 flex items-center">
+          </Link>to
+          <Link to="/" className="hover:text-orange-600 flex items-center">
             <FaShoppingCart className="mr-1" /> Cart (0)
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* Main Header */}
       <div className="flex justify-between items-center px-4 lg:px-16 py-3">
         {/* Logo */}
-        <a href="#" className="text-2xl font-bold text-orange-600">MyStore</a>
+        <Link to="/" className="text-2xl font-bold text-orange-600">MyStore</Link>to
 
         {/* Search Bar */}
         <div className="flex flex-1 mx-4 max-w-2xl border border-gray-300 rounded-lg overflow-hidden">
@@ -39,12 +39,12 @@ const Header = () => {
 
         {/* Icons */}
         <div className="hidden md:flex gap-6">
-          <a href="#" className="hover:text-orange-600">
+          <Link to="/" className="hover:text-orange-600">
             <FaUser className="text-xl" />
-          </a>
-          <a href="#" className="hover:text-orange-600">
+          </Link>to
+          <Link to ="/" className="hover:text-orange-600">
             <FaShoppingCart className="text-xl" />
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
