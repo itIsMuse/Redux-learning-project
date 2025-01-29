@@ -10,10 +10,10 @@ const Header = () => {
         <div className="flex gap-4">
           <Link to="/" className="hover:text-orange-600 flex items-center">
             <FaUser className="mr-1" /> Login / Sign Up
-          </Link>to
+          </Link>
           <Link to="/" className="hover:text-orange-600 flex items-center">
             <FaQuestionCircle className="mr-1" /> Help
-          </Link>to
+          </Link>
           <Link to="/" className="hover:text-orange-600 flex items-center">
             <FaShoppingCart className="mr-1" /> Cart (0)
           </Link>
@@ -23,7 +23,7 @@ const Header = () => {
       {/* Main Header */}
       <div className="flex justify-between items-center px-4 lg:px-16 py-3">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-orange-600">MyStore</Link>to
+        <Link to="/" className="text-2xl font-bold text-orange-600">MyStore</Link>
 
         {/* Search Bar */}
         <div className="flex flex-1 mx-4 max-w-2xl border border-gray-300 rounded-lg overflow-hidden">
@@ -41,7 +41,7 @@ const Header = () => {
         <div className="hidden md:flex gap-6">
           <Link to="/" className="hover:text-orange-600">
             <FaUser className="text-xl" />
-          </Link>to
+          </Link>
           <Link to ="/" className="hover:text-orange-600">
             <FaShoppingCart className="text-xl" />
           </Link>
