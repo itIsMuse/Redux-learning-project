@@ -8,6 +8,8 @@ import Product from './Containers/Product'
 import AboutPage from './Components/AboutPage.jsx'
 import Services from './Components/Services.jsx'
 import Contact from './Components/Contact.jsx'
+import Signup from './Components/SignUpPage.jsx'
+import Login from './Components/LoginPage.jsx'
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
       <Route path='*'> 404 Not Found ! </Route>
     </Routes>
     </div>

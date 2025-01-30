@@ -8,7 +8,7 @@ const Header = () => {
       {/* Top Bar */}
       <div className="hidden md:flex justify-between items-center px-4 lg:px-16 py-2 text-sm text-gray-700">
         <div className="flex gap-4">
-          <Link to="/" className="hover:text-orange-600 flex items-center">
+          <Link to="/signup" className="hover:text-orange-600 flex items-center">
             <FaUser className="mr-1" /> Login / Sign Up
           </Link>
           <Link to="/" className="hover:text-orange-600 flex items-center">
