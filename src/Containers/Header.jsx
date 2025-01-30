@@ -14,7 +14,7 @@ const Header = () => {
           <Link to="/" className="hover:text-orange-600 flex items-center">
             <FaQuestionCircle className="mr-1" /> Help
           </Link>
-          <Link to="/" className="hover:text-orange-600 flex items-center">
+          <Link to="/cart" className="hover:text-orange-600 flex items-center">
             <FaShoppingCart className="mr-1" /> Cart (0)
           </Link>
         </div>
@@ -39,10 +39,10 @@ const Header = () => {
 
         {/* Icons */}
         <div className="hidden md:flex gap-6">
-          <Link to="/" className="hover:text-orange-600">
+          <Link to="/profile" className="hover:text-orange-600">
             <FaUser className="text-xl" />
           </Link>
-          <Link to ="/" className="hover:text-orange-600">
+          <Link to ="/cart" className="hover:text-orange-600">
             <FaShoppingCart className="text-xl" />
           </Link>
         </div>

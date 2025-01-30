@@ -1,4 +1,5 @@
 import { FaEnvelope, FaLock } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -43,7 +44,7 @@ const Login = () => {
           <div className="text-center text-sm mt-4">
             <a href="#" className="text-gray-600 hover:underline">Forgot password?</a>
             <p className="text-gray-600 mt-2">
-              Don't have an account? <a href="#" className="text-orange-600 hover:underline">Sign up</a>
+              Don't have an account? <Link to ="/signup" className="text-orange-600 hover:underline">Sign up</Link>
             </p>
           </div>
         </form>
