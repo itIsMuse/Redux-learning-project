@@ -1,7 +1,30 @@
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Login = () => {
+const [email, setEmail] = useState('')
+const [password, setPassword] = useState('')
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const backendUrl = 'backend.com'
+
+  const userData = {
+    email,
+    password
+  }
+
+  const response = await fetch(backendUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(userData),
+  })
+
+
+}
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg border border-gray-200">
@@ -18,6 +41,7 @@ const Login = () => {
                 type="email" 
                 placeholder="you@example.com" 
                 className="w-full p-2 focus:outline-none"
+                onChange={(e) => setEmail(e.target.value) }
               />
             </div>
           </div>
@@ -31,12 +55,13 @@ const Login = () => {
                 type="password" 
                 placeholder="********" 
                 className="w-full p-2 focus:outline-none"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
           </div>
 
           {/* Login Button */}
-          <button className="w-full bg-orange-600 text-white py-2 rounded-lg font-semibold hover:bg-orange-500 transition">
+          <button onClick = {handleSubmit} className="w-full bg-orange-600 text-white py-2 rounded-lg font-semibold hover:bg-orange-500 transition">
             Login
           </button>
 

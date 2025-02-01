@@ -13,11 +13,46 @@ const isValidEmail = (email) => {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 };
 
-const handleSubmit = async (e) => {
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    // Dummy backend URL (use a real backend later)
+    const backendUrl = "https://jsonplaceholder.typicode.com/posts";
+  
+    // Data to send
+    const userData = {
+      fullName,
+      email,
+      password,
+    };
+  
+    try {
+      const response = await fetch(backendUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+      });
+  
+      const data = await response.json();
+      console.log("Response:", data);
+  
+      if (!response.ok) {
+        throw new Error("Signup failed");
+      }
+  
+      alert("Signup successful!");
+      setFullName("");
+      setEmail("");
+      setPassword("");
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong. Please try again.");
+    }
   
 }
 
-
+// console.log('fullname', fullName, 'email', email, 'password', password)
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg border border-gray-200">
