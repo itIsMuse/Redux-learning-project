@@ -84,7 +84,7 @@ const Header = () => {
                 placeholder="Search products..." 
                 className="w-full px-4 py-2 text-gray-700 focus:outline-none"
                 />
-  <button className="bg-orange-600 px-4 py-2 text-white">
+  <button className="bg-orange-600 px-4 py-2 mr-3 rounded-tr-lg rounded-br-lg text-white">
     <FaSearch />
   </button>
 </div>
