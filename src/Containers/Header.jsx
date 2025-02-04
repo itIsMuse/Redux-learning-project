@@ -52,7 +52,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-2xl focus:outline-none" 
+          className="md:hidden mr-7 text-2xl focus:outline-none" 
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
@@ -78,6 +78,16 @@ const Header = () => {
               <Link to="/cart" className="flex items-center text-gray-700 hover:text-orange-600">
                 <FaShoppingCart className="mr-2" /> Cart (0)
               </Link>
+              <div className="flex md:hidden items-center border border-gray-300 rounded-lg overflow-hidden w-full mt-2">
+              <input 
+                type="text" 
+                placeholder="Search products..." 
+                className="w-full px-4 py-2 text-gray-700 focus:outline-none"
+                />
+  <button className="bg-orange-600 px-4 py-2 text-white">
+    <FaSearch />
+  </button>
+</div>
             </nav>
           </motion.div>
         )}
