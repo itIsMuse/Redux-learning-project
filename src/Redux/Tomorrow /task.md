@@ -1,2 +1,1 @@
-* Make Sure tailwind works i need to learn that process 
-* it works now, next up should be continuing my app 
+- search bar needs to be connected to the the fetch and work in real time 
