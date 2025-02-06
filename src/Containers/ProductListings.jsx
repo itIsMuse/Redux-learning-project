@@ -10,6 +10,18 @@ const ProductListings = () => {
 
   const dispatch = useDispatch()
   const [loading, setLoading] = useState(true); // Add a loading state
+  const [filteredProducts, setFilteredProducts] = useState([])
+  
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+  
+    const filtered = products.filter((product) =>
+      product.name.toLowerCase().includes(query)
+    );
+  
+    setFilteredProducts(filtered);
+  };
   
 
   const fetchProducts =  async() => {
@@ -17,6 +29,7 @@ const ProductListings = () => {
       const response = await axios.get('https://fakestoreapi.com/products');
       dispatch(removeSelectedProduct())
       dispatch(setProducts(response.data));
+      setFilteredProducts(response.data)
       setLoading(false); // Set loading to false after the data is fetched
     } catch (error) {
       console.log('Error:', error);

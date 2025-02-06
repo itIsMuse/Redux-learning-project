@@ -7,25 +7,29 @@ const SearchBar = () => {
   const navigate = useNavigate(); // Used for redirection
 
   const handleSearch = (e) => {
-    e.preventDefault();
-    if (query.trim()) {
-      navigate(`/search?query=${query}`); // Redirect to search results page
-    }
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+  
+    const filtered = products.filter((product) =>
+      product.name.toLowerCase().includes(query)
+    );
+  
+    setFilteredProducts(filtered);
   };
 
   return (
-    <form onSubmit={handleSearch} className="flex flex-1 mx-4 max-w-2xl border border-gray-300 rounded-lg overflow-hidden">
+    <div>
       <input 
         type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search products, brands and categories"
+        placeholder="Search products..."
+        value={searchQuery}
+        onChange={handleSearch}
         className="w-full px-4 py-2 text-gray-700 focus:outline-none"
       />
       <button type="submit" className="bg-orange-600 px-4 py-2 text-white">
         <FaSearch />
       </button>
-    </form>
+      </div>
   );
 };
 
