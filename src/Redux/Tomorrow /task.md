@@ -1,1 +1,1 @@
-what you need is already in chat gpt 
+what you need is already in chat gpt for the searchbox
