@@ -1,1 +1,1 @@
-- search bar needs to be connected to the the fetch and work in real time 
+what you need is already in chat gpt 
