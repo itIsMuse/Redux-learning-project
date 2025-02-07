@@ -1,61 +1,49 @@
-import React, {useEffect, useState} from 'react'
-import axios from 'axios'
-import { useSelector, useDispatch} from 'react-redux'
-import Product from '../Containers/Product'
-import {removeSelectedProduct, setProducts} from '../Redux/Actions/productAction.js'
-import  ClipLoader  from 'react-spinners/ClipLoader.js'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import Product from "../Containers/Product";
+import { setProducts, setFilteredProducts } from "../Redux/Actions/productAction.js";
+import ClipLoader from "react-spinners/ClipLoader.js";
 
 const ProductListings = () => {
+  const dispatch = useDispatch();
 
+  // Get products and filtered products from Redux store
+  const products = useSelector((state) => state.allProducts.products);
+  const filteredProducts = useSelector((state) => state.allProducts.filteredProducts);
 
-  const dispatch = useDispatch()
-  const [loading, setLoading] = useState(true); // Add a loading state
-  const [filteredProducts, setFilteredProducts] = useState([])
-  
-  const handleSearch = (e) => {
-    const query = e.target.value.toLowerCase();
-    setSearchQuery(query);
-  
-    const filtered = products.filter((product) =>
-      product.name.toLowerCase().includes(query)
-    );
-  
-    setFilteredProducts(filtered);
-  };
-  
+  const [loading, setLoading] = useState(true);
 
-  const fetchProducts =  async() => {
+  // Fetch products from API and store them in Redux
+  const fetchProducts = async () => {
     try {
-      const response = await axios.get('https://fakestoreapi.com/products');
-      dispatch(removeSelectedProduct())
-      dispatch(setProducts(response.data));
-      setFilteredProducts(response.data)
-      setLoading(false); // Set loading to false after the data is fetched
+      const response = await axios.get("https://fakestoreapi.com/products");
+      dispatch(setProducts(response.data)); // Store products in Redux
+      dispatch(setFilteredProducts(response.data)); // Initially, filteredProducts = all products
+      setLoading(false);
     } catch (error) {
-      console.log('Error:', error);
-      setLoading(false); // Set loading to false if there is an error
+      console.log("Error:", error);
+      setLoading(false);
     }
   };
 
   useEffect(() => {
-
     fetchProducts();
-
   }, [dispatch]);
 
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <ClipLoader color="#4A90E2" size={100} /> {/* Spinner */}
+        <ClipLoader color="#4A90E2" size={100} />
       </div>
     );
   }
 
   return (
     <div>
-     <Product />
+      <Product products={filteredProducts} /> {/* Show only filtered products */}
     </div>
-  )
-}
+  );
+};
 
-export default ProductListings
+export default ProductListings;

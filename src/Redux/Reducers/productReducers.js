@@ -3,7 +3,8 @@
 // Initial state
 const initialState = {
     products: [],
-    product: {}
+    product: {},
+    filteredProducts: []
 };
 
 // Reducer function
@@ -23,7 +24,12 @@ const productReducer = (state = initialState, {type, payload}) => {
             return {
                 ...state,
                 product: {}
-            }
+            };
+            case "SET_FILTERED_PRODUCTS":
+      return {
+        ...state,
+        filteredProducts: payload, // Update filtered products
+      };
         default:
             return state;
     }

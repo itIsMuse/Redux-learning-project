@@ -1,35 +1,39 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useDispatch, useSelector } from "react-redux";
 import { FaSearch } from "react-icons/fa";
+import { setFilteredProducts } from "../Redux/Actions/productAction.js";
 
 const SearchBar = () => {
-  const [query, setQuery] = useState("");
-  const navigate = useNavigate(); // Used for redirection
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.allProducts.filteredProducts);
+  console.log(products[0])
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (e) => {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
-  
-    const filtered = products.filter((product) =>
-      product.name.toLowerCase().includes(query)
+
+    const filtered = products.filter((product) =>{
+      console.log(product.name.toLowerCase().includes(query))
+      product.name.toLowerCase().includes(query)}
     );
-  
-    setFilteredProducts(filtered);
+
+    dispatch(setFilteredProducts(filtered)); // Update Redux store
   };
 
   return (
-    <div>
-      <input 
+    <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
+      <input
         type="text"
         placeholder="Search products..."
         value={searchQuery}
         onChange={handleSearch}
         className="w-full px-4 py-2 text-gray-700 focus:outline-none"
       />
-      <button type="submit" className="bg-orange-600 px-4 py-2 text-white">
+      <button className="bg-orange-600 px-4 py-2 text-white">
         <FaSearch />
       </button>
-      </div>
+    </div>
   );
 };
 

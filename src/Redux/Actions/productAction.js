@@ -18,5 +18,13 @@ export const removeSelectedProduct = () => {
     return {
         type: ActionTypes.REMOVE_SELECTED_PRODUCT
     };
+
+    
 }
 
+export const setFilteredProducts = (filteredProducts) => {
+    return {
+      type: "SET_FILTERED_PRODUCTS",
+      payload: filteredProducts,
+    };
+  };
