@@ -28,3 +28,5 @@ export const setFilteredProducts = (filteredProducts) => {
       payload: filteredProducts,
     };
   };
+
+

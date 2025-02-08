@@ -5,20 +5,28 @@ import { setFilteredProducts } from "../Redux/Actions/productAction.js";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.allProducts.filteredProducts);
-  console.log(products[0])
+  const products = useSelector((state) => state.allProducts.products);
+  console.log(products);
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (e) => {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
+  
+    if (query === "") {
+      // If search is empty, reset filteredProducts to show all products
 
-    const filtered = products.filter((product) =>{
-      console.log(product.name.toLowerCase().includes(query))
-      product.name.toLowerCase().includes(query)}
+      dispatch(setFilteredProducts(products));
+      return ;
+    }
+  
+    // Ensure product.title exists before filtering
+    console.log(products);
+    const filtered = products.filter(
+      (product) => product.title && product.title.toLowerCase().includes(query)
     );
-
-    dispatch(setFilteredProducts(filtered)); // Update Redux store
+  
+    dispatch(setFilteredProducts(filtered));
   };
 
   return (
