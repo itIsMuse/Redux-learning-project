@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaSearch } from "react-icons/fa";
 import { setFilteredProducts } from "../Redux/Actions/productAction.js";
+import {setProducts} from "../Redux/Actions/productAction.js";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -16,13 +17,11 @@ const SearchBar = () => {
     if (query === "") {
       // If search is empty, reset filteredProducts to show all products
 
-      dispatch(setFilteredProducts(products));
-      return ;
+      return dispatch(setProducts(products));
     }
   
     // Ensure product.title exists before filtering
-    console.log(products);
-    const filtered = products.filter(
+    const filtered = products[0].filter(
       (product) => product.title && product.title.toLowerCase().includes(query)
     );
   
