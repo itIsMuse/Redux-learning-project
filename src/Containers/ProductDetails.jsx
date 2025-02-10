@@ -5,17 +5,15 @@ import { selectedProduct } from '../Redux/Actions/productAction';
 import axios from 'axios';
 
 const ProductDetails = () => {
-  const { id } = useParams(); // Getting the product ID from the URL
+  const { id } = useParams();
   const dispatch = useDispatch();
 
-  // Use useSelector to get the product details from Redux state
   const product = useSelector((state) => state.allProducts.product);
 
-  // Fetch product details when component mounts or id changes
   const fetchProductDetail = async () => {
     try {
       const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
-      dispatch(selectedProduct(response.data)); // Dispatch the action to update state
+      dispatch(selectedProduct(response.data));
     } catch (error) {
       console.log('Error:', error);
     }
@@ -23,57 +21,45 @@ const ProductDetails = () => {
 
   useEffect(() => {
     if (id) {
-      fetchProductDetail(); // Fetch product details when ID is available
+      fetchProductDetail();
     }
-  }, [id, dispatch]); // Runs again if id or dispatch changes
+  }, [id, dispatch]);
 
   const { title, image, price, category, description } = product;
+
   return (
-<div className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden flex p-5 mt-16">
-  {/* Image Section */}
-  <div className="w-1/2">
-    <img 
-      src={image} 
-      alt="Product Image" 
-      className="w-full h-full object-contain"
-    />
-  </div>
+    <div className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden p-5 mt-16">
+      <div className="flex flex-col md:flex-row items-center md:items-start">
+        
+        {/* Image Section */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <img 
+            src={image} 
+            alt="Product Image" 
+            className="w-full max-w-[300px] h-auto object-contain"
+          />
+        </div>
 
-  {/* Details Section */}
-  <div className="w-1/2 p-4 flex flex-col justify-between">
-    {/* Title */}
-    <h3 className="text-2xl font-bold text-gray-800 mb-2">
-      {title}
-    </h3>
+        {/* Details Section */}
+        <div className="w-full md:w-1/2 p-4 flex flex-col">
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">{title}</h3>
+          <p className="text-sm text-gray-600 mb-4">{category}</p>
+          <p className="text-lg text-gray-700 mb-4">{description}</p>
+          <span className="text-xl font-semibold text-gray-900 mb-4">Price: ${price}</span>
 
-    {/* Category */}
-    <p className="text-sm text-gray-600 mb-4">
-      {category}
-    </p>
-
-    <p className="text-lg text-align-left text-black-600 mb-4">
-      {description}
-    </p>
-
-    {/* Price */}
-    <span className="text-xl font-semibold text-gray-900 mb-4">
-     Price:  ${price}
-    </span>
-
-    {/* Buttons */}
-    <div className="flex items-center justify-center space-x-4 mt-4">
-  <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500">
-    Add to Cart
-  </button>
-  <button className="px-4 py-2 border border-red-300 text-red-700 rounded-md hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-500">
-    Delete
-  </button>
-</div>
-
-  </div>
-</div>
-
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row items-center sm:justify-start space-y-3 sm:space-y-0 sm:space-x-4 mt-4">
+            <button className="px-4 py-2 w-full sm:w-auto border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500">
+              Add to Cart
+            </button>
+            <button className="px-4 py-2 w-full sm:w-auto border border-red-300 text-red-700 rounded-md hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-500">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
-// today i messed up I didnt wake up early enough to code i am just here to mark attendance i have to be better tomorrow and remember my routine and not be carried away with the fasting , the fasting is supposd to help me remeber every action matters 
+
 export default ProductDetails;
