@@ -31,7 +31,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
+    <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden ">
       <input
         type="text"
         placeholder="Search products..."
@@ -39,9 +39,7 @@ const SearchBar = () => {
         onChange={handleSearch}
         className="w-full px-4 py-2 text-gray-700 focus:outline-none"
       />
-      <button className="bg-orange-600 px-4 py-2 text-white">
-        <FaSearch />
-      </button>
+
     </div>
   );
 };
