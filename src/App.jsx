@@ -12,6 +12,7 @@ import Signup from './Components/SignUpPage.jsx'
 import Login from './Components/LoginPage.jsx'
 import Cart from './Components/CartList.jsx'
 import Profile from './Components/ProfilePage.jsx'
+import HelpPage from './Components/HelpPage.jsx'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/help" element={<HelpPage />} />
       <Route path='*'> 404 Not Found ! </Route>
     </Routes>
     </div>

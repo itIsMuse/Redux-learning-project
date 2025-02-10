@@ -34,9 +34,9 @@ const Header = () => {
   }, [])
 
   return (
-    <header className="w-full border-b border-gray-200 bg-white fixed top-0 z-50">
+    <header className="w-full border-b border-gray-200 bg-white fixed top-0 z-50 gap-4">
       {/* Top Bar */}
-      <div className="hidden md:flex justify-between items-center px-4 lg:px-16 py-2 text-sm text-gray-700">
+      <div className="hidden md:flex justify-between items-center px-4 lg:px-16 py-2 text-sm text-gray-700 gap-4">
         <div className="flex gap-4">
         <div className="relative" ref={loginRef}>
             <button
@@ -127,7 +127,7 @@ const Header = () => {
       {/* Main Header */}
       <div className="flex justify-between items-center px-4 lg:px-16 py-3">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-orange-600">MyStore</Link>
+        <Link to="/" className="text-2xl font-bold text-orange-600 pr-2">MyStore</Link>
 
         {/* Search Bar */}
         {/* <div className="hidden md:flex flex-1 mx-4 max-w-2xl border border-gray-300 rounded-lg overflow-hidden">
@@ -154,7 +154,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden mr-7 text-2xl focus:outline-none" 
+          className="md:hidden mr-7 text-2xl focus:outline-none pl-2" 
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
@@ -174,7 +174,7 @@ const Header = () => {
               <Link to="/signup" className="flex items-center text-gray-700 hover:text-orange-600">
                 <FaUser className="mr-2" /> Login / Sign Up
               </Link>
-              <Link to="/" className="flex items-center text-gray-700 hover:text-orange-600">
+              <Link to="/help" className="flex items-center text-gray-700 hover:text-orange-600">
                 <FaQuestionCircle className="mr-2" /> Help
               </Link>
               <Link to="/cart" className="flex items-center text-gray-700 hover:text-orange-600">

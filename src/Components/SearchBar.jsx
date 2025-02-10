@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FaSearch } from "react-icons/fa";
 import { setFilteredProducts } from "../Redux/Actions/productAction.js";
-import {setProducts} from "../Redux/Actions/productAction.js";
+
 
 const SearchBar = () => {
   const dispatch = useDispatch();
