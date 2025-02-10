@@ -7,7 +7,7 @@ import {setProducts} from "../Redux/Actions/productAction.js";
 const SearchBar = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.allProducts.products);
-  console.log(products);
+  
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (e) => {
@@ -16,8 +16,9 @@ const SearchBar = () => {
   
     if (query === "") {
       // If search is empty, reset filteredProducts to show all products
-
-      return dispatch(setProducts(products));
+      const newProducts = products[0];
+      dispatch(setFilteredProducts(newProducts));
+      return;
     }
   
     // Ensure product.title exists before filtering
@@ -26,6 +27,7 @@ const SearchBar = () => {
     );
   
     dispatch(setFilteredProducts(filtered));
+    
   };
 
   return (
