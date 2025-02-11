@@ -114,7 +114,7 @@ const Header = () => {
               >
                 <div className="p-4 text-gray-700 text-sm">
                   <p>Your cart is empty.</p>
-                  <Link to="/shop" className="text-orange-600 mt-2 block">
+                  <Link to="/productListings" className="text-orange-600 mt-2 block">
                     Browse Products
                   </Link>
                 </div>
