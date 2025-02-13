@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { FaTrash, FaShoppingCart } from "react-icons/fa";
 
 const Cart = () => {
-  // Dummy cart items
-  const cartItems = [
+  // State for cart items
+  const [cartItems, setCartItems] = useState([
     {
       id: 1,
       name: "Wireless Headphones",
@@ -17,10 +18,26 @@ const Cart = () => {
       image: "https://via.placeholder.com/100",
       quantity: 1,
     },
-  ];
+  ]);
+
+  // Handle quantity change
+  const handleQuantityChange = (id, newQuantity) => {
+    if (newQuantity < 1) return; // Prevent negative or zero quantity
+
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: newQuantity } : item
+      )
+    );
+  };
+
+  // Handle item removal
+  const handleRemoveItem = (id) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4">
+    <div className="min-h-screen bg-gray-100 py-10 px-4 mt-2">
       <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg border border-gray-200">
         <h2 className="text-2xl font-bold text-center text-orange-600 flex items-center justify-center gap-2">
           <FaShoppingCart /> Shopping Cart
@@ -51,10 +68,11 @@ const Cart = () => {
                   <input
                     type="number"
                     value={item.quantity}
+                    onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value))}
                     className="w-16 border border-gray-300 rounded-lg px-2 py-1 text-center"
                     min="1"
                   />
-                  <button className="text-red-600 hover:text-red-800">
+                  <button onClick={() => handleRemoveItem(item.id)} className="text-red-600 hover:text-red-800">
                     <FaTrash />
                   </button>
                 </div>
