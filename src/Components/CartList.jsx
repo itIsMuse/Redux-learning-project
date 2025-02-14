@@ -1,40 +1,10 @@
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart, updateQuantity } from "../Redux/cartSlice";
 import { FaTrash, FaShoppingCart } from "react-icons/fa";
 
 const Cart = () => {
-  // State for cart items
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Wireless Headphones",
-      price: 15000,
-      image: "https://via.placeholder.com/100",
-      quantity: 1,
-    },
-    {
-      id: 2,
-      name: "Smartphone",
-      price: 95000,
-      image: "https://via.placeholder.com/100",
-      quantity: 1,
-    },
-  ]);
-
-  // Handle quantity change
-  const handleQuantityChange = (id, newQuantity) => {
-    if (newQuantity < 1) return; // Prevent negative or zero quantity
-
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, quantity: newQuantity } : item
-      )
-    );
-  };
-
-  // Handle item removal
-  const handleRemoveItem = (id) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
-  };
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
 
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-4 mt-2">
@@ -59,7 +29,7 @@ const Cart = () => {
                     className="w-16 h-16 object-cover rounded"
                   />
                   <div>
-                    <h3 className="font-semibold text-gray-700">{item.name}</h3>
+                    <h3 className="font-semibold text-gray-700">{item.title}</h3>
                     <p className="text-sm text-gray-500">₦{item.price.toLocaleString()}</p>
                   </div>
                 </div>
@@ -68,11 +38,14 @@ const Cart = () => {
                   <input
                     type="number"
                     value={item.quantity}
-                    onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value))}
-                    className="w-16 border border-gray-300 rounded-lg px-2 py-1 text-center"
                     min="1"
+                    onChange={(e) => dispatch(updateQuantity({ id: item.id, quantity: Number(e.target.value) }))}
+                    className="w-16 border border-gray-300 rounded-lg px-2 py-1 text-center"
                   />
-                  <button onClick={() => handleRemoveItem(item.id)} className="text-red-600 hover:text-red-800">
+                  <button
+                    onClick={() => dispatch(removeFromCart(item.id))}
+                    className="text-red-600 hover:text-red-800"
+                  >
                     <FaTrash />
                   </button>
                 </div>
