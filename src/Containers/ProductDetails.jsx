@@ -4,6 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectedProduct } from '../Redux/Actions/productAction';
 import { addToCart } from '../Redux/cartSlice';
 import axios from 'axios';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -50,7 +55,7 @@ const ProductDetails = () => {
           <h3 className="text-2xl font-bold text-gray-800 mb-2">{title}</h3>
           <p className="text-sm text-gray-600 mb-4">{category}</p>
           <p className="text-lg text-gray-700 mb-4">{description}</p>
-          <span className="text-xl font-semibold text-gray-900 mb-4">Price: ${price}</span>
+          <span className="text-xl font-semibold text-gray-900 mb-4">Price: #{price}</span>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center sm:justify-center space-y-3 sm:space-y-0 sm:space-x-4 mt-4">
