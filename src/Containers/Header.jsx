@@ -118,7 +118,8 @@ const Header = () => {
               >
                 <div className="p-4 text-gray-700 text-sm">
                   {cartCount > 0 ? (
-                    <p>You have {cartCount} item(s) in your cart.</p>
+                    <p><Link to="/cart" className="text-orange-600 mt-2 block"> items ({cartCount}) </Link></p>
+               
                   ) : (
                     <>
                       <p>Your cart is empty.</p>
