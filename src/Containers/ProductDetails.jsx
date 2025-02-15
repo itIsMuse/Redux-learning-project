@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectedProduct } from '../Redux/Actions/productAction';
+import { selectedProduct, removeSelectedProduct } from '../Redux/Actions/productAction';
 import { addToCart } from '../Redux/cartSlice';
 import axios from 'axios';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -29,6 +29,9 @@ const ProductDetails = () => {
     if (id) {
       fetchProductDetail();
     }
+    return () => {
+      dispatch(removeSelectedProduct()); // ✅ Remove when leaving the page
+    };
   }, [id, dispatch]);
 
   const handleAddToCart = () => {
