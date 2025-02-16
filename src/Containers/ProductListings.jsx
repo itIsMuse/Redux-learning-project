@@ -11,6 +11,7 @@ const ProductListings = () => {
   // Get products and filtered products from Redux store
   const products = useSelector((state) => state.allProducts.products);
   const filteredProducts = useSelector((state) => state.allProducts.filteredProducts);
+  
 
   const [loading, setLoading] = useState(true);
 
@@ -26,6 +27,10 @@ const ProductListings = () => {
       setLoading(false);
     }
   };
+   const handleAddToCart = () => {
+    dispatch(addToCart({ ...product, quantity: 1 }));
+  };
+
 
   useEffect(() => {
     fetchProducts();

@@ -25,6 +25,11 @@ const ProductDetails = () => {
     }
   };
 
+  const handleAddToCart = () => {
+    dispatch(addToCart({ ...product, quantity: 1 }));
+  };
+
+
   useEffect(() => {
     if (id) {
       fetchProductDetail();
@@ -34,10 +39,7 @@ const ProductDetails = () => {
     };
   }, [id, dispatch]);
 
-  const handleAddToCart = () => {
-    dispatch(addToCart({ ...product, quantity: 1 }));
-  };
-
+   
   const { title, image, price, category, description } = product;
 
   return (
