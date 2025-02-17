@@ -38,9 +38,9 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="w-full border-b border-gray-200 bg-white fixed top-0 z-50 gap-4">
+    <header className="w-full  border-b border-gray-200 bg-white fixed top-0 z-50 gap-4 px-3 left-0">
       {/* Top Bar */}
-      <div className="hidden md:flex justify-between items-center px-4 lg:px-16 py-2 text-sm text-gray-700 gap-4">
+      <div className="hidden md:flex justify-between items-center px-6 lg:px-16 py-2 text-sm text-gray-700 gap-4">
         <div className="flex gap-4">
           <div className="relative" ref={loginRef}>
             <button
