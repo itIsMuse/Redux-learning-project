@@ -1,3 +1,1 @@
-done the adding items 
-next is carousel 
-remove selected product has a bug to fix
+bug when you add from main productlist page to cartList tolocalstring bug 
