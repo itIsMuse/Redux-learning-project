@@ -30,7 +30,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden ">
+    <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden mr-5 ">
       <input
         type="text"
         placeholder="Search products..."

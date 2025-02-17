@@ -138,7 +138,7 @@ const Header = () => {
       {/* Main Header */}
       <div className="flex justify-between items-center px-4 lg:px-16 py-3">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-orange-600 pr-2">MyStore</Link>
+        <Link to="/" className="text-2xl font-bold text-orange-600 pr-5">MyStore</Link>
 
         {/* Search Bar */}
         <SearchBar />
