@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToCart } from '../Redux/cartSlice'
 
 const Product = () => {
 
@@ -9,6 +10,7 @@ const Product = () => {
     dispatch(addToCart({ ...product, quantity: 1 }));
   };
   const products = useSelector((state) => state.allProducts.filteredProducts); // Use filteredProducts for display
+  const product = useSelector((state) => state.allProducts.product);
 
   return (
     <div className="mt-20 container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -16,16 +18,16 @@ const Product = () => {
         products.map((product) => {
           const { id, title, image, price, category } = product;
           return (
-            <div key={id} className="p-4">
+            <div key={id} className="p-4 block bg-white border border-gray-200 rounded-lg shadow-md hover:grow transition-shadow duration-300">
               <Link
                 to={`/product/${id}`}
-                className="block bg-white border border-gray-200 rounded-lg shadow-md hover:grow transition-shadow duration-300"
               >
                 <img
                   src={image}
                   alt="Product Image"
                   className="w-full h-48 object-contain rounded-t-lg"
                 />
+              </Link>
                 <div className="p-4">
                   <h2 className="text-lg font-semibold">{title}</h2>
                   <p className="text-gray-600">#{price}</p>
@@ -38,7 +40,6 @@ const Product = () => {
             </button>
           </div>
                 </div>
-              </Link>
             </div>
           );
         })
