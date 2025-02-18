@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from '../Redux/cartSlice'
 
-const Product = () => {
+const Product = ({handleAddToCart}) => {
 
   const dispatch = useDispatch();
-  const handleAddToCart = () => {
-    dispatch(addToCart({ ...product, quantity: 1 }));
-  };
+  // const handleAddToCart = (product) => {
+  //   dispatch(addToCart({ ...product, quantity: 1 }));
+  // };
   const products = useSelector((state) => state.allProducts.filteredProducts); // Use filteredProducts for display
   const product = useSelector((state) => state.allProducts.product);
 

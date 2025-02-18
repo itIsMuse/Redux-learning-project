@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Product from "../Containers/Product";
 import { setProducts, setFilteredProducts } from "../Redux/Actions/productAction.js";
 import ClipLoader from "react-spinners/ClipLoader.js";
+import { addToCart } from '../Redux/cartSlice'
 
 const ProductListings = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const ProductListings = () => {
   // Get products and filtered products from Redux store
   const products = useSelector((state) => state.allProducts.products);
   const filteredProducts = useSelector((state) => state.allProducts.filteredProducts);
+  const product = useSelector((state) => state.allProducts.product);
   
 
   const [loading, setLoading] = useState(true);
@@ -46,7 +48,7 @@ const ProductListings = () => {
 
   return (
     <div>
-      <Product products={filteredProducts} /> {/* Show only filtered products */}
+      <Product products={filteredProducts} handleAddToCart = {handleAddToCart}/> {/* Show only filtered products */}
     </div>
   );
 };

@@ -70,9 +70,7 @@ const ProductDetails = () => {
             >
               Add to Cart
             </button>
-            <button className="px-4 py-2 w-full sm:w-auto border border-red-300 text-red-700 rounded-md hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-500">
-              Delete
-            </button>
+            
           </div>
         </div>
       </div>
