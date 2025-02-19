@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import Product from "../Containers/Product";
-import { setProducts, setFilteredProducts } from "../Redux/Actions/productAction.js";
+import { setProducts, setFilteredProducts, selectedProduct } from "../Redux/Actions/productAction.js";
 import ClipLoader from "react-spinners/ClipLoader.js";
 import { addToCart } from '../Redux/cartSlice'
+import { useParams } from "react-router-dom";
 
 const ProductListings = () => {
   const dispatch = useDispatch();
+  const { id } = useParams();
 
   // Get products and filtered products from Redux store
   const products = useSelector((state) => state.allProducts.products);
@@ -22,7 +24,9 @@ const ProductListings = () => {
     try {
       const response = await axios.get("https://fakestoreapi.com/products");
       dispatch(setProducts(response.data)); // Store products in Redux
-      dispatch(setFilteredProducts(response.data)); // Initially, filteredProducts = all products
+      dispatch(setFilteredProducts(response.data));
+      dispatch(selectedProduct(response.data));
+       // Initially, filteredProducts = all products
       setLoading(false);
     } catch (error) {
       console.log("Error:", error);
@@ -31,6 +35,7 @@ const ProductListings = () => {
   };
    const handleAddToCart = () => {
     dispatch(addToCart({ ...product, quantity: 1 }));
+    console.log(product)
   };
 
 
