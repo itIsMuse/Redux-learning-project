@@ -15,6 +15,7 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
 
   const product = useSelector((state) => state.allProducts.product);
+  console.log(product);
 
   const fetchProductDetail = async () => {
     try {

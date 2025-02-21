@@ -15,7 +15,7 @@ const ProductListings = () => {
   const filteredProducts = useSelector((state) => state.allProducts.filteredProducts);
   const product = useSelector((state) => state.allProducts.product);
 
-  // console.log(product);
+  console.log(product);
   
 
   const [loading, setLoading] = useState(true);
@@ -36,8 +36,8 @@ const ProductListings = () => {
   };
 
   
-   const handleAddToCart = () => {
-    console.log(product)
+   const handleAddToCart = (id) => {
+    console.log(product.id)
     const singleProduct = product.find((item) => item.id === id);
     if (singleProduct) {
       dispatch(addToCart(singleProduct)); // Dispatch to cart
@@ -60,7 +60,7 @@ const ProductListings = () => {
 
   return (
     <div>
-      <Product products={filteredProducts} handleAddToCart = {handleAddToCart}/> {/* Show only filtered products */}
+      <Product products={filteredProducts} handleAddToCart = {() => handleAddToCart(product.id)}/> {/* Show only filtered products */}
     </div>
   );
 };
