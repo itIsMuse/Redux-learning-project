@@ -15,7 +15,7 @@ const ProductListings = () => {
   const filteredProducts = useSelector((state) => state.allProducts.filteredProducts);
   const product = useSelector((state) => state.allProducts.product);
 
-  console.log(product);
+  // console.log(product);
   
 
   const [loading, setLoading] = useState(true);

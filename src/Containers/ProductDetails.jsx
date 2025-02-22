@@ -24,10 +24,11 @@ const ProductDetails = () => {
     } catch (error) {
       console.log('Error:', error);
     }
-  };
+  };// gets the data from the back-end and then sends the data to redux 
 
   const handleAddToCart = () => {
     dispatch(addToCart({ ...product, quantity: 1 }));
+    // console.log(product)
   };
 
 
