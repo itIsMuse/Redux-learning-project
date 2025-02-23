@@ -37,12 +37,15 @@ const ProductListings = () => {
 
   
    const handleAddToCart = (id) => {
-    console.log(product.id)
-    const singleProduct = product.find((item) => item.id === id);
-    if (singleProduct) {
-      dispatch(addToCart(singleProduct)); // Dispatch to cart
-    }
-    console.log(singleProduct);
+   const allproducts = product
+   const mappedProduct = allproducts.map((product) => {
+   return  product.id
+   }) /// where i stopped 
+   console.log(mappedProduct)
+    // if (singleProduct) {
+    //   dispatch(addToCart(singleProduct)); // Dispatch to cart
+    // }
+    // console.log(singleProduct);
   };
 
 
