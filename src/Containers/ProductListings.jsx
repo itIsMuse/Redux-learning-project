@@ -39,9 +39,10 @@ const ProductListings = () => {
    const handleAddToCart = (id) => {
    const allproducts = product
    const mappedProduct = allproducts.map((product) => {
-   return  product.id
+    console.log(id)
+   return  product.id === id ? {...product, quantity: 1} : product
+     // if the product id is equal to the id then return the product with the quantity of 1  else return the product     
    }) /// where i stopped 
-   console.log(mappedProduct)
     // if (singleProduct) {
     //   dispatch(addToCart(singleProduct)); // Dispatch to cart
     // }
