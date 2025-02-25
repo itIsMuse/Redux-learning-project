@@ -32,12 +32,12 @@ const Product = ({handleAddToCart}) => {
                   <h2 className="text-lg font-semibold">{title}</h2>
                   <p className="text-gray-600">#{price}</p>
                   <div className="flex flex-col sm:flex-row items-center sm:justify-center space-y-3 sm:space-y-0 sm:space-x-4 mt-4">
-            <button 
-              onClick={handleAddToCart({id})}
-              className=" z-10 px-4 py-2 w-full sm:w-auto border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500"
-            >
-              Add to Cart
-            </button>
+                  <button
+                    onClick={() => handleAddToCart(product)} // ✅ FIXED
+                    className="z-10 px-4 py-2 w-full sm:w-auto border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                  >
+                    Add to Cart
+                  </button>
           </div>
                 </div>
             </div>

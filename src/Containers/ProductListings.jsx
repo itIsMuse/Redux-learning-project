@@ -36,17 +36,9 @@ const ProductListings = () => {
   };
 
   
-   const handleAddToCart = (id) => {
-   const allproducts = product
-   const mappedProduct = allproducts.map((product) => {
-    console.log(id)
-   return  product.id === id ? {...product, quantity: 1} : product
-     // if the product id is equal to the id then return the product with the quantity of 1  else return the product     
-   }) /// where i stopped 
-    // if (singleProduct) {
-    //   dispatch(addToCart(singleProduct)); // Dispatch to cart
-    // }
-    // console.log(singleProduct);
+  const handleAddToCart = (product) => {
+    console.log("Adding to cart:", product);
+    dispatch(addToCart({ ...product, quantity: 1 })); // Ensure Redux action is called
   };
 
 
@@ -64,7 +56,7 @@ const ProductListings = () => {
 
   return (
     <div>
-      <Product products={filteredProducts} handleAddToCart = {() => handleAddToCart(product.id)}/> {/* Show only filtered products */}
+      <Product products={filteredProducts} handleAddToCart = {handleAddToCart}/> {/* Show only filtered products */}
     </div>
   );
 };
