@@ -37,7 +37,6 @@ const ProductListings = () => {
 
   
   const handleAddToCart = (product) => {
-    console.log("Adding to cart:", product);
     dispatch(addToCart({ ...product, quantity: 1 })); // Ensure Redux action is called
   };
 
