@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body, header, footer {
+  background-color: #00102e;
+}
