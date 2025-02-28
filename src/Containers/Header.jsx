@@ -138,7 +138,10 @@ const Header = () => {
       {/* Main Header */}
       <div className="flex justify-between items-center px-4 lg:px-16 py-3">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-white pr-5">MyStore</Link>
+        <Link to="/" className="flex items-center text-2xl font-bold text-white pr-5">
+  <img src="swiminglylogo.png" alt="Sale" className="w-30 h-10" />
+
+</Link>
 
         {/* Search Bar */}
         <SearchBar />
