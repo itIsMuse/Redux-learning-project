@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+  --clr-primary: white;
+  --clr-accent-400: #00102e;
+  --clr-accent-100: #084f70;
+  --clr-accent-200: #04344b;
+}
 body, header, footer {
   background-color: #00102e;
+  color: white;
 }

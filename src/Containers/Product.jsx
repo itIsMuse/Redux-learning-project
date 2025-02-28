@@ -18,7 +18,7 @@ const Product = ({handleAddToCart}) => {
         products.map((product) => {
           const { id, title, image, price, category } = product;
           return (
-            <div key={id} className="p-4 block bg-white border border-gray-200 rounded-lg shadow-md hover:grow transition-shadow duration-300">
+            <div key={id} className="p-3 block shadow-2xl rounded-xl shadow-xl transition duration-1000 hover:grow transition-shadow duration-300">
               <Link
                 to={`/product/${id}`}
               >
@@ -29,12 +29,12 @@ const Product = ({handleAddToCart}) => {
                 />
               </Link>
                 <div className="p-4">
-                  <h2 className="text-lg font-semibold">{title}</h2>
-                  <p className="text-gray-600">#{price}</p>
+                  <h2 className="text-lg text-white font-semibold">{title}</h2>
+                  <p className="text-white">#{price}</p>
                   <div className="flex flex-col sm:flex-row items-center sm:justify-center space-y-3 sm:space-y-0 sm:space-x-4 mt-4">
                   <button
                     onClick={() => handleAddToCart(product)} // ✅ FIXED
-                    className="z-10 px-4 py-2 w-full sm:w-auto border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    className="z-10 px-4 py-2 w-full sm:w-auto border border-gray-300 text-white ro#04344bunded-md transition duration-1000 hover:bg-[#084f70] focus:outline-none focus:ring-2 focus:ring-gray-500 transition duration-1000"
                   >
                     Add to Cart
                   </button>
@@ -66,7 +66,7 @@ export default Product;
 //     return (
 //       <div key = {id} className= 'p-4'>
 //         <Link to={`/product/${id}`}
-//           className="block bg-white border border-gray-200 rounded-lg shadow-md hover:grow transition-shadow duration-300"
+//           className="block bg-white border border-gray-200 rounded-lg shadow-md transition duration-1000 hover:grow transition-shadow duration-300"
 //         >
 //           <img
 //             src={image}
