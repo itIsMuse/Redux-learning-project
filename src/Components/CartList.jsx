@@ -7,9 +7,9 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4 mt-2">
+    <div className="min-h-screen bg- py-10 px-4 mt-5">
       <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-        <h2 className="text-2xl font-bold text-center text-orange-600 flex items-center justify-center gap-2">
+        <h2 className="text-2xl font-bold text-center text-[#04344b] flex items-center justify-center gap-2">
           <FaShoppingCart /> Shopping Cart
         </h2>
 
@@ -57,7 +57,7 @@ const Cart = () => {
               <p className="text-lg font-semibold text-gray-700">
                 Total: ₦{cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toLocaleString()}
               </p>
-              <button className="mt-4 bg-orange-600 text-white py-2 px-6 rounded-lg font-semibold hover:bg-orange-500 transition">
+              <button className="mt-4 bg-[#084f70] text-white py-2 px-6 rounded-lg font-semibold hover:bg-[#04344b] transition">
                 Proceed to Checkout
               </button>
             </div>

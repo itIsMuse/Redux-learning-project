@@ -40,7 +40,7 @@ const Header = () => {
   return (
     <header className="w-full  border-b border-gray-200 bg-[#00102e] fixed top-0 z-50 gap-6 px-3 left-0">
       {/* Top Bar */}
-      <div className="hidden md:flex justify-between items-center px-6 lg:px-16 py-2 text-sm text-gray-700 gap-4">
+      <div className="hidden md:flex justify-between items-center px-6 lg:px-16 py-2 text-sm text-gray-200 gap-4">
         <div className="flex gap-4">
           <div className="relative" ref={loginRef}>
             <button
@@ -118,12 +118,12 @@ const Header = () => {
               >
                 <div className="p-4 text-gray-700 text-sm">
                   {cartCount > 0 ? (
-                    <p><Link to="/cart" className="text-orange-600 mt-2 block"> items ({cartCount}) </Link></p>
+                    <p><Link to="/cart" className="text-[#00102e] mt-2 block"> items ({cartCount}) </Link></p>
                
                   ) : (
                     <>
                       <p>Your cart is empty.</p>
-                      <Link to="/productListings" className="text-orange-600 mt-2 block">
+                      <Link to="/productListings" className="text-[#084f70] mt-2 block">
                         Browse Products
                       </Link>
                     </>
