@@ -56,7 +56,7 @@ const isValidEmail = (email) => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-        <h2 className="text-2xl font-bold text-center text-orange-600">Create an Account</h2>
+        <h2 className="text-2xl font-bold text-center text-[#00102e]">Create an Account</h2>
         <p className="text-gray-600 text-center mt-2">Join us for the best shopping experience</p>
 
         <form className="mt-6">
@@ -106,13 +106,13 @@ const isValidEmail = (email) => {
           </div>
 
           {/* Signup Button */}
-          <button onClick={handleSubmit} className="w-full bg-orange-600 text-white py-2 rounded-lg font-semibold hover:bg-orange-500 transition">
+          <button onClick={handleSubmit} className="w-full bg-[#04344b] text-white py-2 rounded-lg font-semibold hover:bg-[#00102e] transition">
             Sign Up
           </button>
 
           {/* Login Link */}
           <p className="text-gray-600 text-center text-sm mt-4">
-            Already have an account? <Link to="/login" className="text-orange-600 hover:underline">Login</Link>
+            Already have an account? <Link to="/login" className="text-[#04344b] hover:underline">Login</Link>
        </p>
         </form>
       </div>

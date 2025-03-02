@@ -40,7 +40,7 @@ const Cart = () => {
                     value={item.quantity}
                     min="1"
                     onChange={(e) => dispatch(updateQuantity({ id: item.id, quantity: Number(e.target.value) }))}
-                    className="w-16 border border-gray-300 rounded-lg px-2 py-1 text-center"
+                    className="w-16 border border-gray-300 rounded-lg px-2 py-1 text-center text-black"
                   />
                   <button
                     onClick={() => dispatch(removeFromCart(item.id))}

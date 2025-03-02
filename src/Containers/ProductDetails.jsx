@@ -68,7 +68,7 @@ const ProductDetails = () => {
           <div className="flex flex-col sm:flex-row items-center sm:justify-center space-y-3 sm:space-y-0 sm:space-x-4 mt-4">
             <button 
               onClick={handleAddToCart}
-              className="px-4 py-2 w-full sm:w-auto border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="px-4 py-2 w-full sm:w-auto border border-gray-300 text-white rounded-md bg-[#04344b] hover:bg-[#00102e] focus:outline-none focus:ring-2 focus:ring-gray-500"
             >
               Add to Cart
             </button>

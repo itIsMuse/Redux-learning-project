@@ -21,11 +21,11 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-4 mt-3">
       <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-        <h2 className="text-2xl font-bold text-center text-orange-600">My Profile</h2>
+        <h2 className="text-2xl font-bold text-center text-[#00102e]">My Profile</h2>
 
         <div className="mt-6 flex flex-col items-center">
           {/* Profile Picture */}
-          <img src={user.profilePic} alt="Profile" className="w-24 h-24 rounded-full border-4 border-orange-600 shadow-lg" />
+          <img src={user.profilePic} alt="Profile" className="w-24 h-24 rounded-full border-4 border-[#04344b] shadow-lg" />
 
           {/* User Info */}
           {editMode ? (
@@ -57,7 +57,7 @@ const Profile = () => {
         <div className="mt-6 space-y-4">
           {/* Email */}
           <div className="flex items-center gap-3 border-b border-gray-300 pb-2">
-            <FaEnvelope className="text-orange-600" />
+            <FaEnvelope className="text-[#04344b]" />
             {editMode ? (
               <input
                 type="email"
@@ -73,7 +73,7 @@ const Profile = () => {
 
           {/* Phone */}
           <div className="flex items-center gap-3 border-b border-gray-300 pb-2">
-            <FaPhone className="text-orange-600" />
+            <FaPhone className="text-[#04344b]" />
             {editMode ? (
               <input
                 type="text"
@@ -89,7 +89,7 @@ const Profile = () => {
 
           {/* Address */}
           <div className="flex items-center gap-3 border-b border-gray-300 pb-2">
-            <FaMapMarkerAlt className="text-orange-600" />
+            <FaMapMarkerAlt className="text-[#04344b]" />
             {editMode ? (
               <input
                 type="text"
@@ -124,7 +124,7 @@ const Profile = () => {
           ) : (
             <button
               onClick={() => setEditMode(true)}
-              className="bg-orange-600 text-white py-2 px-6 rounded-lg font-semibold hover:bg-orange-500 transition flex items-center gap-2"
+              className="bg-[#04344b] text-white py-2 px-6 rounded-lg font-semibold hover:bg-[#00102e] transition flex items-center gap-2"
             >
               <FaEdit /> Edit Profile
             </button>
