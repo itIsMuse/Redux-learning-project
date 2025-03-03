@@ -46,7 +46,7 @@ const Profile = () => {
               name="email"
               value={user.email}
               onChange={handleChange}
-              className="text-gray-500 text-center border border-gray-300 rounded-md px-2 py-1"
+              className="text-gray-700 text-center border border-gray-300 rounded-md px-2 py-1"
             />
           ) : (
             <p className="text-gray-500">{user.email}</p>
@@ -56,7 +56,7 @@ const Profile = () => {
         {/* User Details */}
         <div className="mt-6 space-y-4">
           {/* Email */}
-          <div className="flex items-center gap-3 border-b border-gray-300 pb-2">
+          <div className="text-gray-700 flex items-center gap-3 border-b border-gray-300 pb-2">
             <FaEnvelope className="text-[#04344b]" />
             {editMode ? (
               <input
@@ -80,7 +80,7 @@ const Profile = () => {
                 name="phone"
                 value={user.phone}
                 onChange={handleChange}
-                className="border border-gray-300 rounded-md px-2 py-1"
+                className="border text-gray-700 border-gray-300 rounded-md px-2 py-1"
               />
             ) : (
               <p className="text-gray-700">{user.phone}</p>
@@ -96,7 +96,7 @@ const Profile = () => {
                 name="address"
                 value={user.address}
                 onChange={handleChange}
-                className="border border-gray-300 rounded-md px-2 py-1 w-full"
+                className="text-gray-700 border border-gray-300 rounded-md px-2 py-1 w-full"
               />
             ) : (
               <p className="text-gray-700">{user.address}</p>
