@@ -44,7 +44,7 @@ const Product = ({ handleAddToCart }) => {
                     <h2 className="text-lg text-white font-semibold">{title}</h2>
                     <p className="text-white">#{price}</p>
                     <button
-                      className="bg-blue-900 text-white  px-4 py-2 mt-2 rounded hover:bg-[#00102f]"
+                      className="bg-blue-700 text-white  px-4 py-2 mt-2 rounded hover:bg-blue-900"
                       onClick={() => handleAddToCart(product)}
                     >
                       Add to Cart
